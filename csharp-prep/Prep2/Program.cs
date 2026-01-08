@@ -8,7 +8,7 @@ class Program
         string userInput = Console.ReadLine();
         float grade = float.Parse(userInput);
 
-        string letter;
+        string letter = "";
         if (grade >= 90)
         {
             letter = "A";
