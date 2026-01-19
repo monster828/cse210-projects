@@ -33,9 +33,7 @@ class Program
                 SaveSystem.SaveDatas(saveDatas);
             }else if (selected == 5)
             {
-                Console.WriteLine($"You have {saveDatas.Count} entries!");
-                Console.WriteLine($"You have made an entry on {CountAmountOfDays(saveDatas)} days!");
-                Console.WriteLine();
+                Stats.DisplayStats(saveDatas);
             }else if (selected == 6)
             {
                 Console.WriteLine("Quitting...");
@@ -47,12 +45,5 @@ class Program
             }
         }
   
-    }
-
-    static int CountAmountOfDays(List<SaveData> saveDatas)
-    {
-        List<string> times = saveDatas.Select(sd => sd._time).ToList();
-        times = times.Distinct().ToList();
-        return times.Count;
     }
 }
