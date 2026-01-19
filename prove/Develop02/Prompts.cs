@@ -9,6 +9,7 @@ public class Prompts
         "What was the strongest emotion I felt today?",
         "If I had one thing I could do over today, what would it be?",
         "What was the hardest thing you did today?",
+        "Did you make anything today, if so what?",
     };
 
     public Prompts()
