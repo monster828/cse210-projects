@@ -11,7 +11,7 @@ public static class SaveSystem
         {
             foreach(SaveData data in saveDatas)
             {
-                outputFile.WriteLine($"{data.prompt}{split}{data.response}{split}{data.time}");   
+                outputFile.WriteLine($"{data._prompt}{split}{data._response}{split}{data._time}");   
             }
         }
     }

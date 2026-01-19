@@ -1,6 +1,6 @@
 public class Prompts
 {
-    public string prompt;
+    public string _prompt;
     string[] prompts =
     {
         "Who was the most interesting person I interacted with today?",
@@ -15,11 +15,11 @@ public class Prompts
     public Prompts()
     {
         Random random = new Random();
-        prompt = prompts[random.Next(prompts.Length)];
+        _prompt = prompts[random.Next(prompts.Length)];
     }
 
     public void DisplayPrompt()
     {
-        Console.WriteLine(prompt);
+        Console.WriteLine(_prompt);
     }
 }
