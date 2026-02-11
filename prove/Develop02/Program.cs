@@ -20,6 +20,7 @@ class Program
                 saveDatas.Add(saveData);
             }else if (selected == 2)
             {
+                Stats.DisplayStats(saveDatas);
                 foreach(SaveData saveData in saveDatas)
                 {
                     saveData.DisplayData();
@@ -32,9 +33,6 @@ class Program
             {
                 SaveSystem.SaveDatas(saveDatas);
             }else if (selected == 5)
-            {
-                Stats.DisplayStats(saveDatas);
-            }else if (selected == 6)
             {
                 Console.WriteLine("Quitting...");
                 break;
