@@ -1,0 +1,47 @@
+@startuml
+Activity <-- Listening
+Activity <-- Breathing
+Activity <-- Reflection
+
+class Main{
++Menu(): void
+}
+
+class Activity{
+-_name: string
+-_description: string
+-_endMessage: string
+-_prompts: string[]
+-_duration: float
+-_animationCharacters: string[]
+
++GetName(): string
++GetDescription(): string
++GetEndMessage(): string
++GetPrompts(): string[]
++GetRandomPrompt(string[] prompts): string
++SetDuration(float): void
++GetDuration(): float
++Timer(): float
++DisplayIntro(string name, string description): void
++DisplayyEnding(string endMessage): void 
++LoadAnimation(float duration, sting[] animationCharacters): void
+}
+
+class Listening{
+-_numberOfItemsEntered: int
+
++ListeningActivity(): void
+}
+
+class Breathing{
++BreathingActivity(): void
+}
+
+class Reflection{
+_questions: string[]
+
++GetQuesitons(): string[]
++Reflection(): void
+}
+@enduml
