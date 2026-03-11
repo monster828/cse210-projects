@@ -2,13 +2,13 @@ public class Goal
 {
     private string _goalName;
     private string _description;
-    private int _pointsRewared;
+    private int _pointsRewarded;
 
-    public Goal(string goalName, string description, int pointsRewared)
+    public Goal(string goalName, string description, int pointsRewarded)
     {
         _goalName = goalName;
         _description = description;
-        _pointsRewared = pointsRewared;
+        _pointsRewarded = pointsRewarded;
     }
 
     public string GetDescription()
@@ -35,7 +35,7 @@ public class Goal
 
     public virtual int RecordEvent()
     {
-        return _pointsRewared;
+        return _pointsRewarded;
     }
 
     public virtual bool IsComplete()
@@ -45,6 +45,6 @@ public class Goal
 
     public virtual string GetSaveGoalString()
     {
-        return $"{_goalName},{_description},{_pointsRewared}";
+        return $"{_goalName},{_description},{_pointsRewarded}";
     }
 }

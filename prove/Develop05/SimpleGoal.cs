@@ -2,7 +2,7 @@ public class SimpleGoal : Goal
 {
     private bool _isComplete;
 
-    public SimpleGoal(string goalName, string description, int pointsRewared, bool isComplete) : base(goalName, description, pointsRewared)
+    public SimpleGoal(string goalName, string description, int pointsRewarded, bool isComplete) : base(goalName, description, pointsRewarded)
     {
         _isComplete = isComplete;
     }

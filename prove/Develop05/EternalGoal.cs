@@ -1,6 +1,6 @@
 public class EternalGoal : Goal
 {
-    public EternalGoal(string goalName, string description, int pointsRewared) : base(goalName, description, pointsRewared)
+    public EternalGoal(string goalName, string description, int pointsRewarded) : base(goalName, description, pointsRewarded)
     {
         
     }
