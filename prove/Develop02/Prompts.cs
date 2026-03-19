@@ -1,7 +1,7 @@
 public class Prompts
 {
-    public string _prompt;
-    string[] prompts =
+    private string _prompt;
+    private string[] _prompts =
     {
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
@@ -15,11 +15,16 @@ public class Prompts
     public Prompts()
     {
         Random random = new Random();
-        _prompt = prompts[random.Next(prompts.Length)];
+        _prompt = _prompts[random.Next(_prompts.Length)];
     }
 
     public void DisplayPrompt()
     {
         Console.WriteLine(_prompt);
+    }
+
+    public string GetPrompt()
+    {
+        return _prompt;
     }
 }

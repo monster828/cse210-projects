@@ -1,7 +1,7 @@
 using System.IO;
 public static class SaveSystem
 {
-    static string split = "~|~";
+    static string _split = "~|~";
     public static void SaveDatas(List<SaveData> saveDatas)
     {
         Console.WriteLine("What do you want to save it as?");
@@ -11,7 +11,7 @@ public static class SaveSystem
         {
             foreach(SaveData data in saveDatas)
             {
-                outputFile.WriteLine($"{data._prompt}{split}{data._response}{split}{data._time}");   
+                outputFile.WriteLine($"{data.GetPrompt()}{_split}{data.GetResponse()}{_split}{data.GetTime()}");   
             }
         }
     }
@@ -28,7 +28,7 @@ public static class SaveSystem
 
             foreach (string line in lines)
             {
-                string[] parts = line.Split(split);
+                string[] parts = line.Split(_split);
                 SaveData saveData = SaveData.LoadSaveData(parts[0],parts[1],parts[2]);
                 saveDatas.Add(saveData);
             }

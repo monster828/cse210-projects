@@ -16,7 +16,7 @@ class Program
                 prompt.DisplayPrompt();
                 Console.Write(">");
                 string response = Console.ReadLine();
-                SaveData saveData = SaveData.CreateSaveData(prompt._prompt, response);
+                SaveData saveData = SaveData.CreateSaveData(prompt.GetPrompt(), response);
                 saveDatas.Add(saveData);
             }else if (selected == 2)
             {

@@ -1,9 +1,24 @@
 
 public class SaveData
 {
-    public string _time;
-    public string _prompt;
-    public string _response;
+    private string _time;
+    private string _prompt;
+    private string _response;
+
+    public string GetTime()
+    {
+        return _time;
+    }
+
+    public string GetPrompt()
+    {
+        return _prompt;
+    }
+
+    public string GetResponse()
+    {
+        return _response;
+    }
 
     public static SaveData CreateSaveData(string prompt, string response)
     {

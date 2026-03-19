@@ -11,7 +11,7 @@ public static class Stats
 
     static int CountAmountOfDays(List<SaveData> saveDatas)
     {
-        List<string> times = saveDatas.Select(sd => sd._time).ToList();
+        List<string> times = saveDatas.Select(sd => sd.GetTime()).ToList();
         times = times.Distinct().ToList();
         return times.Count;
     }
