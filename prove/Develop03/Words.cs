@@ -1,39 +1,39 @@
 public class Word
 {
-    private bool shown = true;
-    private string word;
+    private bool _shown = true;
+    private string _word;
 
     // Set the word
     public void SetWord(string word)
     {
-        this.word = word;
+        _word = word;
     }
 
     // Get the word
     public string GetWord()
     {
-        return word;
+        return _word;
     }
 
     // Turn word from WORD to ____ to hide it from the user
     public void HideWord()
     {
-        shown = false;
+        _shown = false;
         string hidden = "";
 
         // Loops through and for each character in word add a _ to the hidden word
-        foreach(char _ in word)
+        foreach(char _ in _word)
         {
             hidden += "_";
         }
         
         // Set word to the hidden word
-        word = hidden;
+        _word = hidden;
     }
 
     // Returns if shown or not
     public bool IsShown()
     {
-        return shown;
+        return _shown;
     }
 }

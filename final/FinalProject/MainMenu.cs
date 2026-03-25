@@ -9,6 +9,13 @@ public class MainMenu
             Console.WriteLine($"{i + 1}. {_mainMenuOptions[i]}");
         }
         Console.Write("Select what you like to do: ");
-        return int.Parse(Console.ReadLine());
+        if (int.TryParse(Console.ReadLine(), out int number))
+        {
+            return number;
+        }
+        else
+        {
+            return -1;
+        }
     }
 }

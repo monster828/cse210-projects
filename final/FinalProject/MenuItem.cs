@@ -23,4 +23,14 @@ public class MenuItem
     {
         return $"${_cost}  {_name}";
     }
+
+    public virtual string GetSaveMenuItemString()
+    {
+        return $"MenuItem:{_name}:{_cost}";
+    }
+
+    public virtual MenuItem CopyForOrder()
+    {
+        return new MenuItem(_name, _cost);
+    }
 }

@@ -17,7 +17,9 @@ class Program
                 // Do thing based off of selected option
                 case 1:
                     // Load Restaurant
-                    restaurant = saveSystem.LoadRestaurant();
+                    Console.Write("Filename: ");
+                    string filename = Console.ReadLine();
+                    restaurant = saveSystem.LoadRestaurant(filename);
                     break;
                 case 2:
                     // New order
@@ -33,7 +35,9 @@ class Program
                     break;
                 case 5:
                     // Save
-                    saveSystem.SaveRestaurant(restaurant);
+                    Console.Write("Filename: ");
+                    filename = Console.ReadLine();
+                    saveSystem.SaveRestaurant(filename,restaurant);
                     break;
                 case 6:
                     // Quit

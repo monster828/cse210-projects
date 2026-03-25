@@ -9,4 +9,9 @@ public class MainCourse : MenuItem
     {
         return $"${GetCost()}  MainCourse - {GetName()}";
     }
+
+    public override string GetSaveMenuItemString()
+    {
+        return $"MainCourse:{GetName()}:{GetCost()}";
+    }
 }

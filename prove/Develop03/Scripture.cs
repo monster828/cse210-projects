@@ -1,25 +1,25 @@
 using System;
 public class Scripture
 {
-    private ScriptureReference reference;
+    private ScriptureReference _reference;
 
     // Array of all of the words
-    private Word[] scriptureWords;
+    private Word[] _scriptureWords;
 
     // List of all the shown words
-    private List<Word> shownWords;
+    private List<Word> _shownWords;
 
     // Creating scripture
     public Scripture(ScriptureReference scriptureReference, string text)
     {
         // Set reference to assigned reference
-        reference = scriptureReference;
+        _reference = scriptureReference;
 
         // Populate scripture words with the words
         SetText(text);
 
         // Creating list of all the shwon words
-        shownWords = scriptureWords.ToList();
+        _shownWords = _scriptureWords.ToList();
     }
 
     // Get words from scripture and create array
@@ -29,14 +29,14 @@ public class Scripture
         string[] words = text.Split();
 
         // Populate scripture words
-        scriptureWords = new Word[words.Length];
+        _scriptureWords = new Word[words.Length];
 
         // Create the words and assign them to scriptureWords
         for (int i = 0; i < words.Length; i++)
         {
             string word = words[i];
-            scriptureWords[i] = new Word();
-            scriptureWords[i].SetWord(word);
+            _scriptureWords[i] = new Word();
+            _scriptureWords[i].SetWord(word);
         }
     }
 
@@ -46,7 +46,7 @@ public class Scripture
         string text = "";
 
         // Combine words and hidden words to get scripture
-        foreach(Word word in scriptureWords)
+        foreach(Word word in _scriptureWords)
         {
             text += word.GetWord();
             text += " ";
@@ -58,7 +58,7 @@ public class Scripture
     // Get scripture reference
     public string GetReference()
     {
-        return reference.GetReference();
+        return _reference.GetReference();
     }
 
     // Hide amount of words from the user
@@ -75,14 +75,14 @@ public class Scripture
             }
 
             // Get a shown word
-            Word word = shownWords[random.Next(0, shownWords.Count)];
+            Word word = _shownWords[random.Next(0, _shownWords.Count)];
 
             // Double check if word is shown
             if (word.IsShown())
             {
                 // Hide and remove word from shown words
                 word.HideWord();
-                shownWords.Remove(word);
+                _shownWords.Remove(word);
 
                 hiddenWords++;
             }
@@ -92,12 +92,12 @@ public class Scripture
     // Get if any remaining words shown
     public bool IsShownWords()
     {
-        return shownWords.Count != 0;
+        return _shownWords.Count != 0;
     }
 
     // Return scripture length
     public int ScriptureLength()
     {
-        return scriptureWords.Length;
+        return _scriptureWords.Length;
     }
 }
