@@ -6,32 +6,22 @@ class Program
     {
         Console.WriteLine("Welcome to the Journal Program!");
         MainMenu mainMenu = new();
-        List<SaveData> saveDatas = new();
+        Journal journal = new();
         while (true)
         {
             int selected = mainMenu.Menu();
             if (selected == 1)
             {
-                Prompts prompt = new();
-                prompt.DisplayPrompt();
-                Console.Write(">");
-                string response = Console.ReadLine();
-                SaveData saveData = SaveData.CreateSaveData(prompt.GetPrompt(), response);
-                saveDatas.Add(saveData);
+                journal.Write();
             }else if (selected == 2)
             {
-                Stats.DisplayStats(saveDatas);
-                foreach(SaveData saveData in saveDatas)
-                {
-                    saveData.DisplayData();
-                    Console.WriteLine();
-                }
+                journal.Display();
             }else if (selected == 3)
             {
-                saveDatas = SaveSystem.LoadDatas();
+                journal.LoadDatas();
             }else if (selected == 4)
             {
-                SaveSystem.SaveDatas(saveDatas);
+                journal.SaveDatas();
             }else if (selected == 5)
             {
                 Console.WriteLine("Quitting...");
